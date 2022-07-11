@@ -1,0 +1,5 @@
+com/nicolo/exampleservlet/entity/Client.class
+com/nicolo/exampleservlet/servlet/ClientServlet.class
+com/nicolo/exampleservlet/dto/ClientDto.class
+com/nicolo/exampleservlet/dao/DataBaseConnection.class
+com/nicolo/exampleservlet/dao/ClientDao.class

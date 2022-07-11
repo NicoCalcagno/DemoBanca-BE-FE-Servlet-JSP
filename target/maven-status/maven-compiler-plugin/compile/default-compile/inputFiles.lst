@@ -1,0 +1,5 @@
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/entity/Client.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dao/DataBaseConnection.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dao/ClientDao.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dto/ClientDto.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/servlet/ClientServlet.java
