@@ -1,5 +1,13 @@
-com/nicolo/exampleservlet/entity/Client.class
+com/nicolo/exampleservlet/entity/Movement.class
 com/nicolo/exampleservlet/servlet/ClientServlet.class
+com/nicolo/exampleservlet/dao/AccountDao.class
+com/nicolo/exampleservlet/dao/MovementDao.class
+com/nicolo/exampleservlet/servlet/AccountServlet.class
+com/nicolo/exampleservlet/entity/Account.class
+com/nicolo/exampleservlet/dao/ClientDao.class
+com/nicolo/exampleservlet/dto/MovementDto.class
+com/nicolo/exampleservlet/servlet/MovementServlet.class
+com/nicolo/exampleservlet/dto/AccountDto.class
+com/nicolo/exampleservlet/entity/Client.class
 com/nicolo/exampleservlet/dto/ClientDto.class
 com/nicolo/exampleservlet/dao/DataBaseConnection.class
-com/nicolo/exampleservlet/dao/ClientDao.class

@@ -1,5 +1,13 @@
 /home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/entity/Client.java
-/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dao/DataBaseConnection.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dao/AccountDao.java
 /home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dao/ClientDao.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/servlet/MovementServlet.java
 /home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dto/ClientDto.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dao/DataBaseConnection.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dao/MovementDao.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dto/AccountDto.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/entity/Account.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/servlet/AccountServlet.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/dto/MovementDto.java
 /home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/servlet/ClientServlet.java
+/home/nicolo/NetBeansProjects/exampleservlet/src/main/java/com/nicolo/exampleservlet/entity/Movement.java

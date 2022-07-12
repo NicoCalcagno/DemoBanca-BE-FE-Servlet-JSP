@@ -4,9 +4,25 @@
         <servlet-name>ClientServlet</servlet-name>
         <servlet-class>com.nicolo.exampleservlet.servlet.ClientServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccountServlet</servlet-name>
+        <servlet-class>com.nicolo.exampleservlet.servlet.AccountServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MovementServlet</servlet-name>
+        <servlet-class>com.nicolo.exampleservlet.servlet.MovementServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClientServlet</servlet-name>
         <url-pattern>/clientservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountServlet</servlet-name>
+        <url-pattern>/accountservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MovementServlet</servlet-name>
+        <url-pattern>/movementservlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

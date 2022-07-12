@@ -14,6 +14,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  *
@@ -34,31 +39,46 @@ public class ClientServlet extends HttpServlet {
                 break;
             case "edit":
                 showEditForm(request, response);
-            case "update":
-                updateClient(request, response);
                 break;
         }
         
     }
 
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        deleteClientByClientId(request, response);
+    }
+    
+    
+    @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String body = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+        System.out.println(body);
+        try {
+            JSONObject clientJson;
+            clientJson = new JSONObject(body);
+            String clientId = (String) clientJson.get("clientId");
+            String name = (String) clientJson.get("name");
+            String surname = (String) clientJson.get("surname");
+            String email = (String) clientJson.get("email");
+            String tel = (String) clientJson.get("tel");
+            String imageUrl = (String) clientJson.get("imageUrl");
+            
+            Client clientToUpdate = new Client(Long.parseLong(clientId) ,name ,surname ,email ,tel , imageUrl);
+            ClientDao.updateClient(clientToUpdate);
+            
+        } catch (JSONException ex) {
+            Logger.getLogger(AccountServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        doGet(request, response);
+    }
+    
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String operation = request.getParameter("operation");
-        
-        
-        switch(operation){
-            case "delete":
-                System.out.println(operation);
-                deleteClientByClientId(request, response);
-                break;
-            default:
-                System.out.println(operation);
-                getAllClient(request, response);
-                break;
-        }
-        
-        
+        getAllClient(request, response);
     }
     
     private void getAllClient(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -88,31 +108,15 @@ public class ClientServlet extends HttpServlet {
         request.setAttribute("clientToEdit", clientToEdit);
         dispatcher.forward(request, response);
     }
-
-    private void updateClient(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String clientId = request.getParameter("clientId");
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
-        String email = request.getParameter("email");
-        String tel = request.getParameter("tel");
-        String imageUrl = request.getParameter("imageUrl");
-        Client clientToUpdate = new Client(Long.parseLong(clientId), name, surname, email, tel, imageUrl);
-        ClientDao.updateClient(clientToUpdate);
-        
-        getAllClient(request, response);
-    }
-
     
     private void deleteClientByClientId(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String clientId = request.getParameter("id");
+        String clientId = request.getParameter("clientId");
         System.out.println(clientId);
         System.out.println(ClientDao.deleteClient(Long.parseLong(clientId)));
-        request.removeAttribute("id");
-        request.setAttribute("operation", "");
         
-        getAllClient(request, response);
+        
+        doGet(request, response);
     }
     
 }
